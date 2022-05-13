@@ -34,7 +34,7 @@
         <div class="content-area nav">
             <div class="logo">
                 <a href="{{ url('/') }}">
-                    <img class="w-50" src="{{ url('/media/images/BBABAE_white.svg') }}" alt="bbabae logo" />
+                    <img class="w-50" src="{{ url('/media/images/BBABAE_white.svg') }}" alt="logo" />
                 </a>
             </div>
             <ul class="nav-menu">
