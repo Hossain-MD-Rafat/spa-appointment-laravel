@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/submit_appointment', "Home@handleAppointment")->name('submit_appointment');
+Route::post('/submit_form', "Home@handleUser")->name('submit_form');
 Route::get('/', function () {
     return view('appointment');
-});
+})->name('home');
