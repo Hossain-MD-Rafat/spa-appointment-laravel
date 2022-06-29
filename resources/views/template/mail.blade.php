@@ -1,0 +1,1 @@
+<h4>Buchungsinformation. Bitte öffnen Sie den Anhang.</h4>

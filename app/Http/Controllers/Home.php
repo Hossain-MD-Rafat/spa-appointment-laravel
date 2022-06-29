@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendPdf;
+use App\Services\PdfMailService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use PDF;
 
 class Home extends Controller
 {
@@ -121,26 +125,33 @@ class Home extends Controller
     }
     public function handleUser(Request $req)
     {
-        if(true){
-            return view('thankyou');
+        try {
+            $validator = Validator::make($req->all(), [
+                'firstname' => 'required',
+                'lastname' => 'required',
+                'email' => 'email:rfc,dns',
+                'phone' => 'required',
+                'dob' => 'required',
+            ]);
+            if ($validator->fails()) {
+                return view('form')->with('errors', $validator->errors());
+            } else {
+                $data = session()->get('data');
+                $data['firstname'] = $req->post('firstname');
+                $data['lastname'] = $req->post('lastname');
+                $data['email'] = $req->post('email');
+                $data['phone'] = $req->post('phone');
+                $data['dob'] = $req->post('dob');
+                if (!empty($req->post('message'))) {
+                    $data['message'] = $req->post('message');
+                }
+                session()->put('data', $data);
+                $pdfService = new PdfMailService($data);
+                $pdfService->sendPdf();
+                return view('thankyou');
+            }
+        } catch (\Throwable $th) {
+            return $th->getMessage();
         }
-        
-
-        // try {
-        //     $validator = Validator::make($req->all(), [
-        //         'firstname' => 'required',
-        //         'lastname' => 'required',
-        //         'email' => 'email:rfc,dns',
-        //         'phone' => 'required',
-        //         'dob' => 'required',
-        //     ]);
-        //     if ($validator->fails()) {
-        //         return redirect()->back()->withErrors($validator->errors());
-        //     } else {
-        //         return view('thankyou');
-        //     }
-        // } catch (\Throwable $th) {
-        //     return redirect()->back()->with('error', 'Something was wrong');
-        // }
     }
 }

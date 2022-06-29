@@ -20,7 +20,8 @@
 
 <body>
     <header class="container-fluid">
-        <div class="logo-img"><a href="{{route('home')}}"><img src="{{asset('assets/images/logo.png')}}" alt="" /></a></div>
+        <div class="logo-img"><a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo.png') }}"
+                    alt="" /></a></div>
         <ul class="nav-menu">
             <li class="phase-active">1</li>
             <span class="line-active"></span>
@@ -36,6 +37,15 @@
                 @csrf
                 <div class="col-md-8 offset-md-2">
                     <div class="form-group row">
+                        @if ($errors->any())
+                            <div class="alert alert-danger mb-4">
+                                <ul class="list-unstyled">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="col-md-6">
                             <label class="control-label">Vorname</label>
                             <input type="text" name="firstname" required class="form-control">
@@ -48,13 +58,13 @@
                     <div class="form-group mt-4 row">
                         <div class="col-md-12">
                             <label class="control-label">Email</label>
-                            <input type="email" name="Email" required class="form-control">
+                            <input type="email" name="email" required class="form-control">
                         </div>
                     </div>
                     <div class="form-group mt-4 row">
                         <div class="col-md-6">
                             <label class="control-label">Telefon</label>
-                            <input type="text" name="Phone" required class="form-control">
+                            <input type="text" name="phone" required class="form-control">
                         </div>
                         <div class="col-md-6">
                             <label class="control-label">Geburtsdatum</label>

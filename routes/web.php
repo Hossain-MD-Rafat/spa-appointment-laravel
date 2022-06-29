@@ -18,3 +18,7 @@ Route::post('/submit_form', "Home@handleUser")->name('submit_form');
 Route::get('/', function () {
     return view('appointment');
 })->name('home');
+Route::get('/test', "Home@testpdf")->name('test');
+
+
+
