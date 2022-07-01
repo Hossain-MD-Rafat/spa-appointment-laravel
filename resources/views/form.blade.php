@@ -46,7 +46,7 @@
                                 </ul>
                             </div>
                         @endif
-                        <div class="col-md-6">
+                        <div class="col-md-6 res-mb-4">
                             <label class="control-label">Vorname</label>
                             <input type="text" name="firstname" required class="form-control">
                         </div>
@@ -62,13 +62,13 @@
                         </div>
                     </div>
                     <div class="form-group mt-4 row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 res-mb-4">
                             <label class="control-label">Telefon</label>
                             <input type="text" name="phone" required class="form-control">
                         </div>
                         <div class="col-md-6">
                             <label class="control-label">Geburtsdatum</label>
-                            <input type="text" name="dob" required class="form-control">
+                            <input type="date" name="dob" required class="form-control">
                         </div>
                     </div>
                     <div class="form-group mt-4 row">

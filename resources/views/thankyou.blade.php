@@ -73,6 +73,9 @@
             text-transform: capitalize;
             box-shadow: 0 10px 16px 1px rgba(174, 199, 251, 1);
         }
+        .go-home:hover{
+            color: #fff;
+        }
 
         .footer-like {
             margin-top: auto;

@@ -40,40 +40,39 @@
                                 </thead> --}}
                                 <tbody>
                                     <tr>
-                                        <td class="center">Package : {{ $data['package_name'] }}</td>
+                                        <td class="center">Paket : {{ $data['package_name'] }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="center">Time : {{ $data['time'] }}</td>
+                                        <td class="center">Zeit : {{ $data['time'] }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center">Paketgebühr : €{{ $data['package_charge'] }}</td>
+                                        <?php $total += $data['package_charge']; ?>
                                     </tr>
                                     @if (isset($data['extra_person']))
                                         <tr>
-                                            <td class="center">Extra Person : {{ $data['extra_person'] }}</td>
+                                            <td class="center">Zusätzliche Personen : {{ $data['extra_person'] }}</td>
                                         </tr>
                                         <tr>
-                                            <td class="center">Extra Person Charge :
-                                                {{ $data['extra_person_charge'] }}</td>
+                                            <td class="center">Gebühr für zusätzliche Personen :
+                                                €{{ $data['extra_person_charge'] }}</td>
                                         </tr>
                                         <?php $total += $data['extra_person_charge'] * $data['extra_person']; ?>
                                     @endif
                                     @if (isset($data['extra_booking']))
                                         <tr>
-                                            <td class="center">Additional Booking : {{ $data['extra_booking'] }}</td>
+                                            <td class="center">Zusätzliche Buchung : {{ $data['extra_booking'] }}</td>
                                         </tr>
                                         <tr>
-                                            <td class="center">Additional Booking Charge :
-                                                {{ $data['extra_booking_charge'] }}</td>
+                                            <td class="center">Zusätzliche Buchungsgebühr :
+                                                €{{ $data['extra_booking_charge'] }}</td>
                                         </tr>
                                         <?php $total += $data['extra_booking_charge']; ?>
                                     @endif
                                     <tr>
-                                        <td class="center">Package Charge : {{ $data['package_charge'] }}</td>
-                                        <?php $total += $data['package_charge']; ?>
-                                    </tr>
-                                    <tr>
-                                        <td class="center">VAT : {{ $data['vat'] }}</td>
+                                        <td class="center">Mehrwersteuer : €{{ $data['vat'] }}</td>
                                         <?php $total += $data['vat']; ?>
                                     </tr>
-
                                 </tbody>
                             </table>
                         </div>
@@ -85,10 +84,10 @@
                                     <tbody>
                                         <tr>
                                             <td class="left">
-                                                <strong>Total</strong>
+                                                <strong>Gesamt</strong>
                                             </td>
                                             <td class="right">
-                                                <strong>$<?= $total ?></strong>
+                                                <strong>€<?= $total ?></strong>
                                             </td>
                                         </tr>
                                     </tbody>

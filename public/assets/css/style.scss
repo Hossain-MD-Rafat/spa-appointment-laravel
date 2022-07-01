@@ -34,7 +34,6 @@ header {
         box-shadow 0.3s;
     @include flex-all(space-around, center);
     .logo-img {
-        margin: 0 auto;
         width: 10%;
         img {
             max-width: 100%;
@@ -108,9 +107,10 @@ header {
     }
     .dropdown-content {
         opacity: 0;
-        height: 0px;
+        max-height: 0px;
         display: flex;
         justify-content: space-between;
+        transition: all 0.4s ease-in-out;
         z-index: -10;
         .w-9 {
             width: 9%;
@@ -133,7 +133,7 @@ header {
     }
     .dropdown-content.show {
         opacity: 1;
-        height: auto;
+        max-height: 250px;
         transition: all 0.4s ease-in-out;
         z-index: 10;
     }
@@ -207,3 +207,18 @@ input[type="radio"]:checked::before {
     cursor: not-allowed;
     opacity: 0.5;
 }
+
+@media only screen and (max-width: 768px) {
+    header .nav-menu li {
+        padding: 0px 12px;
+    }
+    header .logo-img img {
+        max-width: 200%;
+    }
+    header .nav-menu {
+        margin-top: 22px;
+    }
+    .res-mb-4{
+        margin-bottom: 1.5rem;
+    }
+  }

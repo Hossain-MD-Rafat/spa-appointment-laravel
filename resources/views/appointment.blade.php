@@ -166,14 +166,14 @@
                         <span class="calculation-row d-none" id="time">Zeit: <span class="value">Nicht
                                 vergeben</span>
                         </span>
-                        <span class="calculation-row" id="extra-person">Extra Person: <span class="value">0</span>
+                        <span class="calculation-row" id="extra-person">Zusätzliche Personen: <span class="value">0</span>
                         </span>
                         <span class="calculation-row" id="additional-booking">Zusätzliche Buchung: <span
                                 class="value">Nicht vergeben</span> </span>
                         <span class="calculation-row" id="vat">Mehrwersteuer: €<span class="value">0</span>
                         </span>
                         <hr class="w-100">
-                        <span class="calculation-row-total" id="total">Total: €<span
+                        <span class="calculation-row-total" id="total">Gesamt: €<span
                                 class="value">0</span></span>
                     </div>
                 </div>
