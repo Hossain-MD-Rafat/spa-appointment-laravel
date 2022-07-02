@@ -50,7 +50,7 @@
                                 <div class="w-90">
                                     <li>
                                         <input type="radio" name="timeline" required value="a-1"
-                                            onchange="showAdditionalPerson(this)" />Zeitraum 1: 10:00 Uhr bis 14 Uhr r
+                                            onchange="showAdditionalPerson(this)" />Zeitraum 1: 10:00 Uhr bis 14 Uhr
                                     </li>
                                     <li>
                                         <input type="radio" name="timeline" required value="a-2"
@@ -73,7 +73,7 @@
                                 <div class="w-90">
                                     <li>
                                         <input type="radio" name="timeline" required value="b-1"
-                                            onchange="showAdditionalPerson(this)" />Zeitraum 1: 10:00 Uhr bis 14 Uhr r
+                                            onchange="showAdditionalPerson(this)" />Zeitraum 1: 10:00 Uhr bis 14 Uhr
                                     </li>
                                     <li>
                                         <input type="radio" name="timeline" required value="b-2"
@@ -170,11 +170,11 @@
                         </span>
                         <span class="calculation-row" id="additional-booking">Zusätzliche Buchung: <span
                                 class="value">Nicht vergeben</span> </span>
-                        <span class="calculation-row" id="vat">Mehrwersteuer: €<span class="value">0</span>
+                        <span class="calculation-row" id="vat">Mehrwersteuer: <span class="value">0</span>€
                         </span>
                         <hr class="w-100">
-                        <span class="calculation-row-total" id="total">Gesamt: €<span
-                                class="value">0</span></span>
+                        <span class="calculation-row-total" id="total">Gesamt: <span
+                                class="value">0</span>€</span>
                     </div>
                 </div>
                 <div class="form-group col-md-12 z-index mt-5 mb-5 disable-option" id="continue-btn">
