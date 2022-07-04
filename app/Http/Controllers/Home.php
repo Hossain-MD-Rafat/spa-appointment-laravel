@@ -26,7 +26,7 @@ class Home extends Controller
                 switch ($req->post('timeline')) {
                     case 'a-1':
                         $data['package_name'] = "Montag bis Donnerstag a 4 Stunden bis 2 Personen";
-                        $data['time'] = "Zeitraum 1: 10:00 Uhr bis 14 Uhr r";
+                        $data['time'] = "Zeitraum 1: 10:00 Uhr bis 14 Uhr";
                         $data['vat'] = 30.40;
                         $data['package_charge'] = 160;
                         break;
@@ -44,7 +44,7 @@ class Home extends Controller
                         break;
                     case 'b-1':
                         $data['package_name'] = "Freitag bis Sonntag / Feiertage a 4 Stunden bis 2 Personen";
-                        $data['time'] = "Zeitraum 1: 10:00 Uhr bis 14 Uhr r";
+                        $data['time'] = "Zeitraum 1: 10:00 Uhr bis 14 Uhr";
                         $data['vat'] = 35.15;
                         $data['package_charge'] = 185;
                         break;

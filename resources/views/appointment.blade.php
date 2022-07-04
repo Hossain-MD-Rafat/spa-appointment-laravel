@@ -230,7 +230,7 @@
             switch (e.value) {
                 case 'a-1':
                     $('#package .value').text("Montag bis Donnerstag a 4 Stunden bis 2 Personen");
-                    $('#time .value').text("Zeitraum 1: 10:00 Uhr bis 14 Uhr r");
+                    $('#time .value').text("Zeitraum 1: 10:00 Uhr bis 14 Uhr");
                     $('#time').removeClass('d-none');
                     $('#vat .value').text(30.40);
                     $('#extra-person .value').text(addtional_person);
@@ -260,7 +260,7 @@
                     break;
                 case 'b-1':
                     $('#package .value').text("Freitag bis Sonntag / Feiertage a 4 Stunden bis 2 Personen");
-                    $('#time .value').text("Zeitraum 1: 10:00 Uhr bis 14 Uhr r");
+                    $('#time .value').text("Zeitraum 1: 10:00 Uhr bis 14 Uhr");
                     $('#time').removeClass('d-none');
                     $('#vat .value').text(35.15);
                     $('#extra-person .value').text(addtional_person);
