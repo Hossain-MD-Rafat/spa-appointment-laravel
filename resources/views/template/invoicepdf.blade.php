@@ -46,7 +46,7 @@
                                         <td class="center">Zeit : {{ $data['time'] }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="center">Paketgebühr : €{{ $data['package_charge'] }}</td>
+                                        <td class="center">Paketgebühr : {{ $data['package_charge'] }}€</td>
                                         <?php $total += $data['package_charge']; ?>
                                     </tr>
                                     @if (isset($data['extra_person']))
@@ -55,7 +55,7 @@
                                         </tr>
                                         <tr>
                                             <td class="center">Gebühr für zusätzliche Personen :
-                                                €{{ $data['extra_person_charge'] }}</td>
+                                                {{ $data['extra_person_charge'] }}€</td>
                                         </tr>
                                         <?php $total += $data['extra_person_charge'] * $data['extra_person']; ?>
                                     @endif
@@ -65,12 +65,12 @@
                                         </tr>
                                         <tr>
                                             <td class="center">Zusätzliche Buchungsgebühr :
-                                                €{{ $data['extra_booking_charge'] }}</td>
+                                                {{ $data['extra_booking_charge'] }}€</td>
                                         </tr>
                                         <?php $total += $data['extra_booking_charge']; ?>
                                     @endif
                                     <tr>
-                                        <td class="center">Mehrwersteuer : €{{ $data['vat'] }}</td>
+                                        <td class="center">Mehrwersteuer : {{ $data['vat'] }}€</td>
                                         <?php $total += $data['vat']; ?>
                                     </tr>
                                 </tbody>
@@ -87,7 +87,7 @@
                                                 <strong>Gesamt</strong>
                                             </td>
                                             <td class="right">
-                                                <strong>€<?= $total ?></strong>
+                                                <strong><?= $total ?>€</strong>
                                             </td>
                                         </tr>
                                     </tbody>
