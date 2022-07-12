@@ -222,3 +222,24 @@ input[type="radio"]:checked::before {
         margin-bottom: 1.5rem;
     }
   }
+
+  @media only screen and (max-width: 400px) {
+    .form-section h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .form-section h4 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .form-section .dropdown-header .dropdown-title {
+        font-size: 12px;
+    }
+    .form-section .dropdown-content .w-90 li{
+        font-size: 10px;
+    }
+    .right-calculation .calculation-row {
+        font-size: 12px;
+        line-height: 18px;
+    }
+  }
