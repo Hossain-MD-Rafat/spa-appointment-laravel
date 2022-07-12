@@ -190,8 +190,8 @@
     <script>
         let package = '';
         let total = 0;
-        let addtional_person = 0;
-        let addtional_booking = "Nicht vergeben";
+        let additional_person = 0;
+        let additional_booking = "Nicht vergeben";
         let additional_amount_person = 0;
         let additional_amount_booking = 0;
         let additional_amount = 0;
@@ -233,8 +233,8 @@
                     $('#time .value').text("Zeitraum 1: 10:00 Uhr bis 14 Uhr");
                     $('#time').removeClass('d-none');
                     $('#vat .value').text(30.40);
-                    $('#extra-person .value').text(addtional_person);
-                    $('#additional-booking .value').text(addtional_booking);
+                    $('#extra-person .value').text(additional_person);
+                    $('#additional-booking .value').text(additional_booking);
                     total = 30.40 + 160;
                     $('#total .value').text(total + additional_amount);
                     break;
@@ -243,8 +243,8 @@
                     $('#time .value').text("Zeitraum 2: 15:00 Uhr bis 19 Uhr");
                     $('#time').removeClass('d-none');
                     $('#vat .value').text(30.40);
-                    $('#extra-person .value').text(addtional_person);
-                    $('#additional-booking .value').text(addtional_booking);
+                    $('#extra-person .value').text(additional_person);
+                    $('#additional-booking .value').text(additional_booking);
                     total = 30.40 + 160;
                     $('#total .value').text(total + additional_amount);
                     break;
@@ -253,8 +253,8 @@
                     $('#time .value').text("Zeitraum 3: 20:00 Uhr bis 00:00 Uhr");
                     $('#time').removeClass('d-none');
                     $('#vat .value').text(30.40);
-                    $('#extra-person .value').text(addtional_person);
-                    $('#additional-booking .value').text(addtional_booking);
+                    $('#extra-person .value').text(additional_person);
+                    $('#additional-booking .value').text(additional_booking);
                     total = 30.40 + 160;
                     $('#total .value').text(total + additional_amount);
                     break;
@@ -263,8 +263,8 @@
                     $('#time .value').text("Zeitraum 1: 10:00 Uhr bis 14 Uhr");
                     $('#time').removeClass('d-none');
                     $('#vat .value').text(35.15);
-                    $('#extra-person .value').text(addtional_person);
-                    $('#additional-booking .value').text(addtional_booking);
+                    $('#extra-person .value').text(additional_person);
+                    $('#additional-booking .value').text(additional_booking);
                     total = 35.15 + 185;
                     $('#total .value').text(total + additional_amount);
                     break;
@@ -273,8 +273,8 @@
                     $('#time .value').text("Zeitraum 2: 15:00 Uhr bis 19 Uhr");
                     $('#time').removeClass('d-none');
                     $('#vat .value').text(35.15);
-                    $('#extra-person .value').text(addtional_person);
-                    $('#additional-booking .value').text(addtional_booking);
+                    $('#extra-person .value').text(additional_person);
+                    $('#additional-booking .value').text(additional_booking);
                     total = 35.15 + 185;
                     $('#total .value').text(total + additional_amount);
                     break;
@@ -283,8 +283,8 @@
                     $('#time .value').text("Zeitraum 3: 20:00 Uhr bis 00:00 Uhr");
                     $('#time').removeClass('d-none');
                     $('#vat .value').text(35.15);
-                    $('#extra-person .value').text(addtional_person);
-                    $('#additional-booking .value').text(addtional_booking);
+                    $('#extra-person .value').text(additional_person);
+                    $('#additional-booking .value').text(additional_booking);
                     total = 35.15 + 185;
                     $('#total .value').text(total + additional_amount);
                     break;
@@ -293,8 +293,8 @@
                     $('#time .value').text("Montag bis Donnerstag 20 Uhr bis 10 Uhr");
                     $('#time').removeClass('d-none');
                     $('#vat .value').text(43.70);
-                    $('#extra-person .value').text(addtional_person);
-                    $('#additional-booking .value').text(addtional_booking);
+                    $('#extra-person .value').text(additional_person);
+                    $('#additional-booking .value').text(additional_booking);
                     total = 35.15 + 230;
                     $('#total .value').text(total + additional_amount);
                     break;
@@ -303,8 +303,8 @@
                     $('#time .value').text("Freitag bis Sonntag / Feiertage 20 Uhr bis 10 Uhr");
                     $('#time').removeClass('d-none');
                     $('#vat .value').text(46.55);
-                    $('#extra-person .value').text(addtional_person);
-                    $('#additional-booking .value').text(addtional_booking);
+                    $('#extra-person .value').text(additional_person);
+                    $('#additional-booking .value').text(additional_booking);
                     total = 46.55 + 245;
                     $('#total .value').text(total + additional_amount);
                     break;
@@ -316,14 +316,15 @@
         function showAdditionalBookings(e) {
             switch (e.value) {
                 case '1':
+                additional_person = 1;
                     if (package && (package != 'c-1' || package != 'c-2')) {
-                        $('#extra-person .value').text(1);
+                        $('#extra-person .value').text(additional_person);
                         additional_amount -= additional_amount_person;
                         additional_amount += 45;
                         additional_amount_person = 45;
                         $('#total .value').text(total + additional_amount);
                     } else {
-                        $('#extra-person .value').text(1);
+                        $('#extra-person .value').text(additional_person);
                         additional_amount -= additional_amount_person;
                         additional_amount += 60;
                         additional_amount_person = 60;
@@ -331,14 +332,15 @@
                     }
                     break;
                 case '2':
+                additional_person = 2;
                     if (package && (package != 'c-1' || package != 'c-2')) {
-                        $('#extra-person .value').text(2);
+                        $('#extra-person .value').text(additional_person);
                         additional_amount -= additional_amount_person;
                         additional_amount += 45 * 2;
                         additional_amount_person = 45 * 2;
                         $('#total .value').text(total + additional_amount);
                     } else {
-                        $('#extra-person .value').text(2);
+                        $('#extra-person .value').text(additional_person);
                         additional_amount -= additional_amount_person;
                         additional_amount += 60 * 2;
                         additional_amount_person = 60 * 2;
