@@ -10,10 +10,11 @@
             <!-- PDF CONTENT START -->
             <div class="container">
                 <div class="card">
-                    <div class="card-header">
-                        <h4>Buchungsdaten</h4>
+                    <div class="card-header" style="padding: 10px 0px">
+                        <span style="float: left; margin-left: 20px; margin-top: 5px"><b>Buchungsdaten</b></span>
+                        <span style="float: right; margin-right: 20px; margin-top: 5px">{{Carbon\Carbon::now()->format('j F Y')}}</span>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="margin-top: 10px">
                         <div class="row mb-4">
                             <div class="col-sm-6">
                                 <div>

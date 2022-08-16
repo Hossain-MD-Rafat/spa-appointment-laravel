@@ -27,50 +27,50 @@ class Home extends Controller
                     case 'a-1':
                         $data['package_name'] = "Montag bis Donnerstag a 4 Stunden bis 2 Personen";
                         $data['time'] = "Zeitraum 1: 10:00 Uhr bis 14 Uhr";
-                        $data['vat'] = 30.40;
-                        $data['package_charge'] = 160;
+                        $data['vat'] = 31.13;
+                        $data['package_charge'] = 163.87;
                         break;
                     case 'a-2':
                         $data['package_name'] = "Montag bis Donnerstag a 4 Stunden bis 2 Personen";
                         $data['time'] = "Zeitraum 2: 15:00 Uhr bis 19 Uhr";
-                        $data['vat'] = 30.40;
-                        $data['package_charge'] = 160;
+                        $data['vat'] = 31.13;
+                        $data['package_charge'] = 163.87;
                         break;
                     case 'a-3':
                         $data['package_name'] = "Montag bis Donnerstag a 4 Stunden bis 2 Personen";
                         $data['time'] = "Zeitraum 3: 20:00 Uhr bis 00:00 Uhr";
-                        $data['vat'] = 30.40;
-                        $data['package_charge'] = 160;
+                        $data['vat'] = 31.13;
+                        $data['package_charge'] = 163.87;
                         break;
                     case 'b-1':
                         $data['package_name'] = "Freitag bis Sonntag / Feiertage a 4 Stunden bis 2 Personen";
                         $data['time'] = "Zeitraum 1: 10:00 Uhr bis 14 Uhr";
-                        $data['vat'] = 35.15;
-                        $data['package_charge'] = 185;
+                        $data['vat'] = 35.13;
+                        $data['package_charge'] = 184.87;
                         break;
                     case 'b-2':
                         $data['package_name'] = "Freitag bis Sonntag / Feiertage a 4 Stunden bis 2 Personen";
                         $data['time'] = "Zeitraum 2: 15:00 Uhr bis 19 Uhr";
-                        $data['vat'] = 35.15;
-                        $data['package_charge'] = 185;
+                        $data['vat'] = 35.13;
+                        $data['package_charge'] = 184.87;
                         break;
                     case 'b-3':
                         $data['package_name'] = "Freitag bis Sonntag / Feiertage a 4 Stunden bis 2 Personen";
                         $data['time'] = "Zeitraum 3: 20:00 Uhr bis 00:00 Uhr";
-                        $data['vat'] = 35.15;
-                        $data['package_charge'] = 185;
+                        $data['vat'] = 35.13;
+                        $data['package_charge'] = 184.87;
                         break;
                     case 'c-1':
                         $data['package_name'] = "Übernachtung bis zu 2 Personen";
                         $data['time'] = "Montag bis Donnerstag 20 Uhr bis 10 Uhr";
-                        $data['vat'] = 43.70;
-                        $data['package_charge'] = 230;
+                        $data['vat'] = 47.90;
+                        $data['package_charge'] = 252.10;
                         break;
                     case 'c-2':
                         $data['package_name'] = "Übernachtung bis zu 2 Personen";
                         $data['time'] = "Freitag bis Sonntag / Feiertage 20 Uhr bis 10 Uhr";
-                        $data['vat'] = 46.55;
-                        $data['package_charge'] = 245;
+                        $data['vat'] = 54.29;
+                        $data['package_charge'] = 285.71;
                         break;
                     default:
                         break;
@@ -79,20 +79,20 @@ class Home extends Controller
                 if (!empty($req->post('extra_person'))) {
                     switch ($req->post('extra_person')) {
                         case '1':
+                            $data['extra_person_charge'] = 30;
                             $data['extra_person'] = 1;
-                            if ($req->post('timeline') != 'c-1' || $req->post('timeline') != 'c-2') {
-                                $data['extra_person_charge'] = 45;
-                            } else {
-                                $data['extra_person_charge'] = 60;
-                            }
                             break;
                         case '2':
+                            $data['extra_person_charge'] = 30;
                             $data['extra_person'] = 2;
-                            if ($req->post('timeline') != 'c-1' || $req->post('timeline') != 'c-2') {
-                                $data['extra_person_charge'] = 45;
-                            } else {
-                                $data['extra_person_charge'] = 60;
-                            }
+                            break;
+                        case '3':
+                            $data['extra_person_charge'] = 30;
+                            $data['extra_person'] = 3;
+                            break;
+                        case '4':
+                            $data['extra_person_charge'] = 30;
+                            $data['extra_person'] = 4;
                             break;
                         default:
                             break;
@@ -146,6 +146,8 @@ class Home extends Controller
                     $data['message'] = $req->post('message');
                 }
                 session()->put('data', $data);
+                // $pdf = PDF::loadView('template/invoicepdf', ['data' => $data]);
+                // return $pdf->download('trips.pdf');
                 $pdfService = new PdfMailService($data);
                 $pdfService->sendPdf();
                 return view('thankyou');
