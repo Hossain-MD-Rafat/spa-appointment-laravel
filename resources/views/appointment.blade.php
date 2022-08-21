@@ -180,17 +180,17 @@
                         </span>
                         <span class="calculation-row" id="additional-booking">Zusätzliche Buchung: <span
                                 class="value">Nicht vergeben</span> </span>
-                        <span class="calculation-row" id="package-price">Paketgebühr: <span class="value">0</span>€
-                        </span>
-                        <span class="calculation-row" id="vat">Mehrwersteuer: <span class="value">0</span>€
-                        </span>
+                        <span class="calculation-row" id="package-price">Paketgebühr: <b><span class="value">0</span>€
+                        </b></span>
+                        <span class="calculation-row" id="vat">Mehrwersteuer: <b><span class="value">0</span>€
+                        </b></span>
                         <hr class="w-100">
-                        <span class="calculation-row-total" id="total">Gesamt: <span
-                                class="value">0</span>€</span>
+                        <span class="calculation-row-total" id="total">Gesamt: <b><span
+                                class="value">0</span>€</b></span>
                     </div>
                 </div>
                 <div class="form-group col-md-12 z-index mt-5 mb-5 disable-option" id="continue-btn">
-                    <input class="continue-btn" type="submit" name="" value="JETZT BUCHEN" />
+                    <input class="continue-btn" type="submit" name="" style="color:black !important" value="JETZT BUCHEN" />
                 </div>
             </form>
         </div>
@@ -368,19 +368,19 @@
                     $('#total .value').text(total + additional_amount);
                     break;
                 case '5':
-                    additional_booking = "1 Bademantel (3 Euro)";
+                    additional_booking = "1 Bademantel (5 Euro)";
+                    $('#additional-booking .value').text(additional_booking);
+                    additional_amount -= additional_amount_booking;
+                    additional_amount += 5;
+                    additional_amount_booking = 5;
+                    $('#total .value').text(total + additional_amount);
+                    break;
+                case '6':
+                    additional_booking = "1 Badehandtuch (3 Euro)";
                     $('#additional-booking .value').text(additional_booking);
                     additional_amount -= additional_amount_booking;
                     additional_amount += 3;
                     additional_amount_booking = 3;
-                    $('#total .value').text(total + additional_amount);
-                    break;
-                case '6':
-                    additional_booking = "1 Badehandtuch (2 Euro)";
-                    $('#additional-booking .value').text(additional_booking);
-                    additional_amount -= additional_amount_booking;
-                    additional_amount += 2;
-                    additional_amount_booking = 2;
                     $('#total .value').text(total + additional_amount);
                     break;
                 case '7':

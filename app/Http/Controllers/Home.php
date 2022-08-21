@@ -100,15 +100,15 @@ class Home extends Controller
                 }
                 if (!empty($req->post('extra_booking'))) {
                     switch ($req->post('extra_booking')) {
-                        case '3':
+                        case '5':
                             $data['extra_booking'] = "1 Bademantel";
+                            $data['extra_booking_charge'] = 5;
+                            break;
+                        case '6':
+                            $data['extra_booking'] = "1 Badehandtuch";
                             $data['extra_booking_charge'] = 3;
                             break;
-                        case '4':
-                            $data['extra_booking'] = "1 Badehandtuch";
-                            $data['extra_booking_charge'] = 2;
-                            break;
-                        case '5':
+                        case '7':
                             $data['extra_booking'] = "Weiteres Getränke Paket ( 1 Flasche Wasser, 1 Saft, 1 Softgetränk)";
                             $data['extra_booking_charge'] = 6;
                             break;

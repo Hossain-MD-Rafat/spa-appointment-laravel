@@ -167,9 +167,6 @@ input[type=radio]:checked::before {
   font-weight: 500;
   line-height: 32px;
 }
-.right-calculation .calculation-row .value {
-  font-weight: 400;
-}
 .right-calculation .calculation-row-total {
   text-align: right;
   display: block;
@@ -179,9 +176,6 @@ input[type=radio]:checked::before {
   font-size: 16px;
   font-weight: 500;
   line-height: 32px;
-}
-.right-calculation .calculation-row-total .value {
-  font-weight: 400;
 }
 
 .continue-btn {
