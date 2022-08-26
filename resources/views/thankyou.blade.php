@@ -144,15 +144,15 @@
                     <h1>Vielen Dank!</h1>
                     <p>Vielen Dank für Ihre Terminbuchung</p>
                     <p class="mb-4">Sie sollten bald eine E-Mail erhalten</p>
-                    <a class="go-home" href="http://welltimeprivatespa.de/">
+                    {{-- <a class="go-home" href="http://welltimeprivatespa.de/">
                         nach Hause gehen
-                    </a>
+                    </a> --}}
                 </div>
-                {{-- <div class="footer-like">
+                <div class="footer-like">
                     <p>E-Mail nicht erhalten?
                         <a href="{{route('home')}}">Buchen Sie einen weiteren Termin</a>
                     </p>
-                </div> --}}
+                </div>
             </div>
         </div>
     </section>
