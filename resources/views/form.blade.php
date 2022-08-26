@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="form-group col-md-8 offset-md-2 mt-5 mb-5">
-                    <input class="continue-btn" type="submit" name="form_submit" value="JETZT BUCHEN">
+                    <input class="continue-btn" type="submit" name="form_submit" value="JETZT BUCHEN" style="color:black !important">
                 </div>
             </form>
         </div>

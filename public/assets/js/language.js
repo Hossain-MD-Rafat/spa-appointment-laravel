@@ -28,6 +28,7 @@ datepicker.regional.de = {
 	dayNamesShort: [ "So", "Mo", "Di", "Mi", "Do", "Fr", "Sa" ],
 	dayNamesMin: [ "So", "Mo", "Di", "Mi", "Do", "Fr", "Sa" ],
 	weekHeader: "KW",
+	dateFormat: "dd.mm.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

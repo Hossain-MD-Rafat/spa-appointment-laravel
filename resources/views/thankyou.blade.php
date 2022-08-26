@@ -148,11 +148,11 @@
                         nach Hause gehen
                     </a>
                 </div>
-                <div class="footer-like">
+                {{-- <div class="footer-like">
                     <p>E-Mail nicht erhalten?
                         <a href="{{route('home')}}">Buchen Sie einen weiteren Termin</a>
                     </p>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

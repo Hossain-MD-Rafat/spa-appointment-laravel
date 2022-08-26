@@ -180,7 +180,7 @@
                                     <li>
                                         <input type="radio" name="extra_booking"
                                             onchange="showAdditionalBookings(this)" value="7" />Weiteres Getränke
-                                        Paket ( 1 Flasche Wasser, 1 Saft, 1 Softgetränk) (6 Euro)
+                                        Paket ( 1 Flasche Wasser, 1 Saft, 1 Softgetränk) (10 Euro)
                                     </li>
                                 </div>
                             </div>
@@ -230,7 +230,7 @@
             minDate: 0
         });
         setTimeout(() => {
-            $.datepicker.regional[ "hi" ];
+            $.datepicker.regional[ "de" ];
         }, 2000);
         function noMondays(date) {
             if (dateOption === 1){
@@ -440,11 +440,11 @@
                     $('#total .value').text(total + additional_amount);
                     break;
                 case '7':
-                    additional_booking = "Weiteres Getränke Paket ( 1 Flasche Wasser, 1 Saft, 1 Softgetränk) (6 Euro)";
+                    additional_booking = "Weiteres Getränke Paket ( 1 Flasche Wasser, 1 Saft, 1 Softgetränk) (10 Euro)";
                     $('#additional-booking .value').text(additional_booking);
                     additional_amount -= additional_amount_booking;
-                    additional_amount += 6;
-                    additional_amount_booking = 6;
+                    additional_amount += 10;
+                    additional_amount_booking = 10;
                     $('#total .value').text(total + additional_amount);
                     break;
                 default:

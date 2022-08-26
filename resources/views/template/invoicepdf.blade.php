@@ -12,7 +12,7 @@
                 <div class="card">
                     <div class="card-header" style="padding: 10px 0px">
                         <span style="float: left; margin-left: 20px; margin-top: 5px"><b>Buchungsdaten</b></span>
-                        <span style="float: right; margin-right: 20px; margin-top: 5px">{{Carbon\Carbon::createFromFormat('m/d/Y', $data['dateTime'])->format('j F Y')}}</span>
+                        <span style="float: right; margin-right: 20px; margin-top: 5px">{{Carbon\Carbon::now()->format('j.F.Y')}}</span>
                     </div>
                     <div class="card-body" style="margin-top: 10px">
                         <div class="row mb-4">
@@ -27,7 +27,7 @@
                                     <div><small>Nachricht :
                                             {{ isset($data['message']) ? $data['message'] : '' }}</small></div>
                                 @endif
-
+                                <div><small>Datum : {{ isset($data['dateTime']) ? $data['dateTime'] : '' }}</small></div>
                             </div>
                         </div>
                         <div class="table-responsive-sm  table-bordered">

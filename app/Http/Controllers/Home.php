@@ -112,7 +112,7 @@ class Home extends Controller
                             break;
                         case '7':
                             $data['extra_booking'] = "Weiteres Getränke Paket ( 1 Flasche Wasser, 1 Saft, 1 Softgetränk)";
-                            $data['extra_booking_charge'] = 6;
+                            $data['extra_booking_charge'] = 10;
                             break;
                         default:
                             break;
