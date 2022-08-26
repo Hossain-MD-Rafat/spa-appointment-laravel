@@ -111,6 +111,22 @@
                         </div>
                         {{-- hide --}}
                         <div class="form-group col-md-12 mt-2 mb-2 disable-option" onclick="showDropdown(this)"
+                            id="date-booking">
+                            <div class="dropdown-header w-100">
+                                <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
+                                <span class="dropdown-title">Wählen Sie ein Datum</span>
+                            </div>
+                            <div class="dropdown-content dropdown-content1">
+                                <div class="w-9"></div>
+                                <div class="w-90">
+                                    <li class="pick-date">
+                                        <input type="text" name="datetime" id="datepicker"></p>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- hide --}}
+                        <div class="form-group col-md-12 mt-2 mb-2 disable-option" onclick="showDropdown(this)"
                             id="additional-person">
                             <div class="dropdown-header w-100">
                                 <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
@@ -169,21 +185,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group col-md-12 mt-2 mb-2 disable-option" onclick="showDropdown(this)"
-                            id="date-booking">
-                            <div class="dropdown-header w-100">
-                                <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-                                <span class="dropdown-title">Wählen Sie ein Datum</span>
-                            </div>
-                            <div class="dropdown-content dropdown-content1">
-                                <div class="w-9"></div>
-                                <div class="w-90">
-                                    <li class="pick-date">
-                                        <input type="text" name="datetime" id="datepicker"></p>
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -220,6 +221,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="{{asset('assets/js/language.js')}}"></script>
     <script src="script.js"></script>
     <script>
         let dateOption = 0;
@@ -227,7 +229,9 @@
             beforeShowDay: noMondays,
             minDate: 0
         });
-
+        setTimeout(() => {
+            $.datepicker.regional[ "hi" ];
+        }, 2000);
         function noMondays(date) {
             if (dateOption === 1){
                 if(date.getDay() >= 1 && date.getDay() <= 4 ){
