@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Mail\SendPdf;
 use App\Services\PdfMailService;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon as SupportCarbon;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use PDF;
@@ -116,6 +118,7 @@ class Home extends Controller
                             break;
                     }
                 }
+                $data['dateTime'] = $req->post('datetime');
                 session()->put('data', $data);
                 return view('form');
             }

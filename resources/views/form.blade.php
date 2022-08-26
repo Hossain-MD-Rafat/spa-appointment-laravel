@@ -20,7 +20,7 @@
 
 <body>
     <header class="container-fluid">
-        <div class="logo-img"><a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo.png') }}"
+        <div class="logo-img"><a href="http://welltimeprivatespa.de/"><img src="{{ asset('assets/images/logo.png') }}"
                     alt="" /></a></div>
         <ul class="nav-menu">
             <li class="phase-active">1</li>

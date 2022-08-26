@@ -64,8 +64,8 @@ header {
     background: #333;
     color: white;
 }
-.line-active{
-  border-bottom: 2px solid black !important;
+.line-active {
+    border-bottom: 2px solid black !important;
 }
 .form-section {
     margin-top: 50px;
@@ -137,6 +137,11 @@ header {
         transition: all 0.4s ease-in-out;
         z-index: 10;
     }
+    .dropdown-content1 {
+        .w-90 {
+            z-index: 12;
+        }
+    }
 }
 input[type="radio"] {
     appearance: none;
@@ -201,6 +206,16 @@ input[type="radio"]:checked::before {
     cursor: not-allowed;
     opacity: 0.5;
 }
+.pick-date {
+    padding-left: 0px !important;
+}
+.pick-date input {
+    width: 98%;
+    margin: 0px auto;
+    border: none;
+    height: 80%;
+    outline: 0px;
+}
 
 @media only screen and (max-width: 768px) {
     header .nav-menu li {
@@ -212,12 +227,12 @@ input[type="radio"]:checked::before {
     header .nav-menu {
         margin-top: 22px;
     }
-    .res-mb-4{
+    .res-mb-4 {
         margin-bottom: 1.5rem;
     }
-  }
+}
 
-  @media only screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) {
     .form-section h2 {
         font-size: 20px;
         line-height: 30px;
@@ -229,11 +244,11 @@ input[type="radio"]:checked::before {
     .form-section .dropdown-header .dropdown-title {
         font-size: 12px;
     }
-    .form-section .dropdown-content .w-90 li{
+    .form-section .dropdown-content .w-90 li {
         font-size: 10px;
     }
     .right-calculation .calculation-row {
         font-size: 12px;
         line-height: 18px;
     }
-  }
+}

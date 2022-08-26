@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -20,7 +21,8 @@
 
 <body>
     <header class="container-fluid">
-        <div class="logo-img"><a href="{{route('home')}}"><img src="{{asset('assets/images/logo.png')}}" alt="" /></a></div>
+        <div class="logo-img"><a href="http://welltimeprivatespa.de/"><img src="{{ asset('assets/images/logo.png') }}"
+                    alt="" /></a></div>
         <ul class="nav-menu">
             <li class="phase-active">1</li>
             <span class="line-active"></span>
@@ -36,7 +38,7 @@
             <h4>
                 Buche jetzt Deine ganz persönliche Suite zu Deinem Wunschtermin.
             </h4>
-            <form action="{{ route('submit_appointment') }}" method="POST" class="row mt-5">
+            <form action="{{ route('submit_appointment') }}" method="POST" class="row mt-5" autocomplete="off">
                 @csrf
                 <div class="col-md-7">
                     <div class="row">
@@ -50,15 +52,15 @@
                                 <div class="w-90">
                                     <li>
                                         <input type="radio" name="timeline" required value="a-1"
-                                            onchange="showAdditionalPerson(this)" />Zeitraum 1: 10:00 Uhr bis 14 Uhr
+                                            onchange="showAdditionalPerson(this, 1)" />Zeitraum 1: 10:00 Uhr bis 14 Uhr
                                     </li>
                                     <li>
                                         <input type="radio" name="timeline" required value="a-2"
-                                            onchange="showAdditionalPerson(this)" />Zeitraum 2: 15:00 Uhr bis 19 Uhr
+                                            onchange="showAdditionalPerson(this, 1)" />Zeitraum 2: 15:00 Uhr bis 19 Uhr
                                     </li>
                                     <li>
                                         <input type="radio" name="timeline" required value="a-3"
-                                            onchange="showAdditionalPerson(this)" />Zeitraum 3: 20:00 Uhr bis 00:00 Uhr
+                                            onchange="showAdditionalPerson(this, 1)" />Zeitraum 3: 20:00 Uhr bis 00:00 Uhr
                                     </li>
                                 </div>
                             </div>
@@ -73,15 +75,15 @@
                                 <div class="w-90">
                                     <li>
                                         <input type="radio" name="timeline" required value="b-1"
-                                            onchange="showAdditionalPerson(this)" />Zeitraum 1: 10:00 Uhr bis 14 Uhr
+                                            onchange="showAdditionalPerson(this, 2)" />Zeitraum 1: 10:00 Uhr bis 14 Uhr
                                     </li>
                                     <li>
                                         <input type="radio" name="timeline" required value="b-2"
-                                            onchange="showAdditionalPerson(this)" />Zeitraum 2: 15:00 Uhr bis 19 Uhr
+                                            onchange="showAdditionalPerson(this, 2)" />Zeitraum 2: 15:00 Uhr bis 19 Uhr
                                     </li>
                                     <li>
                                         <input type="radio" name="timeline" required value="b-3"
-                                            onchange="showAdditionalPerson(this)" />Zeitraum 3: 20:00 Uhr bis 00:00 Uhr
+                                            onchange="showAdditionalPerson(this, 2)" />Zeitraum 3: 20:00 Uhr bis 00:00 Uhr
                                     </li>
                                 </div>
                             </div>
@@ -96,12 +98,12 @@
                                 <div class="w-90">
                                     <li>
                                         <input type="radio" name="timeline" required value="c-1"
-                                            onchange="showAdditionalPerson(this)" />Montag bis Donnerstag 20 Uhr bis 10
+                                            onchange="showAdditionalPerson(this, 1)" />Montag bis Donnerstag 20 Uhr bis 10
                                         Uhr
                                     </li>
                                     <li>
                                         <input type="radio" name="timeline" required value="c-2"
-                                            onchange="showAdditionalPerson(this)" />Freitag bis Sonntag / Feiertage 20
+                                            onchange="showAdditionalPerson(this, 2)" />Freitag bis Sonntag / Feiertage 20
                                         Uhr bis 10 Uhr
                                     </li>
                                 </div>
@@ -151,17 +153,33 @@
                                 <div class="w-90">
                                     <li>
                                         <input type="radio" name="extra_booking"
-                                            onchange="showAdditionalBookings(this)" value="5" />1 Bademantel (3
+                                            onchange="showAdditionalBookings(this)" value="5" />1 Bademantel (5
                                         Euro)
                                     </li>
                                     <li>
                                         <input type="radio" name="extra_booking"
-                                            onchange="showAdditionalBookings(this)" value="6" />1 Badehandtuch (2
+                                            onchange="showAdditionalBookings(this)" value="6" />1 Badehandtuch (3
                                         Euro)
                                     </li>
                                     <li>
                                         <input type="radio" name="extra_booking"
-                                            onchange="showAdditionalBookings(this)" value="7" />Weiteres Getränke Paket ( 1 Flasche Wasser, 1 Saft, 1 Softgetränk) (6 Euro)
+                                            onchange="showAdditionalBookings(this)" value="7" />Weiteres Getränke
+                                        Paket ( 1 Flasche Wasser, 1 Saft, 1 Softgetränk) (6 Euro)
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12 mt-2 mb-2 disable-option" onclick="showDropdown(this)"
+                            id="date-booking">
+                            <div class="dropdown-header w-100">
+                                <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
+                                <span class="dropdown-title">Wählen Sie ein Datum</span>
+                            </div>
+                            <div class="dropdown-content dropdown-content1">
+                                <div class="w-9"></div>
+                                <div class="w-90">
+                                    <li class="pick-date">
+                                        <input type="text" name="datetime" id="datepicker"></p>
                                     </li>
                                 </div>
                             </div>
@@ -176,21 +194,24 @@
                         <span class="calculation-row d-none" id="time">Zeit: <span class="value">Nicht
                                 vergeben</span>
                         </span>
-                        <span class="calculation-row" id="extra-person">Zusätzliche Personen: <span class="value">0</span>
+                        <span class="calculation-row" id="extra-person">Zusätzliche Personen: <span
+                                class="value">0</span>
                         </span>
                         <span class="calculation-row" id="additional-booking">Zusätzliche Buchung: <span
                                 class="value">Nicht vergeben</span> </span>
-                        <span class="calculation-row" id="package-price">Paketgebühr: <b><span class="value">0</span>€
-                        </b></span>
+                        <span class="calculation-row" id="package-price">Paketgebühr: <b><span
+                                    class="value">0</span>€
+                            </b></span>
                         <span class="calculation-row" id="vat">Mehrwersteuer: <b><span class="value">0</span>€
-                        </b></span>
+                            </b></span>
                         <hr class="w-100">
                         <span class="calculation-row-total" id="total">Gesamt: <b><span
-                                class="value">0</span>€</b></span>
+                                    class="value">0</span>€</b></span>
                     </div>
                 </div>
                 <div class="form-group col-md-12 z-index mt-5 mb-5 disable-option" id="continue-btn">
-                    <input class="continue-btn" type="submit" name="" style="color:black !important" value="JETZT BUCHEN" />
+                    <input class="continue-btn" type="submit" name="" style="color:black !important"
+                        value="JETZT BUCHEN" />
                 </div>
             </form>
         </div>
@@ -198,8 +219,33 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="script.js"></script>
     <script>
+        let dateOption = 0;
+        $("#datepicker").datepicker({
+            beforeShowDay: noMondays,
+            minDate: 0
+        });
+
+        function noMondays(date) {
+            if (dateOption === 1){
+                if(date.getDay() >= 1 && date.getDay() <= 4 ){
+                    return [true, "", ""];
+                }else{
+                    return [false, "closed", "Not Available"];
+                }
+            }
+            if (dateOption === 2){
+                if((date.getDay() >= 5 && date.getDay() <= 6) || date.getDay() === 0){
+                    return [true, "", ""];
+                }else{
+                    return [false, "closed", "Not Available"];
+                }
+            }
+            else
+                return [true, "", ""]
+        }
         let package = '';
         let total = 0;
         let additional_person = 0;
@@ -225,7 +271,9 @@
             }
         }
 
-        function showAdditionalPerson(e) {
+        function showAdditionalPerson(e, option) {
+            dateOption = option;
+            $('#datepicker').val("");
             let element = document.getElementById('additional-person');
             let btn = document.getElementById('continue-btn');
             if (element.classList.contains('disable-option')) {
@@ -237,6 +285,10 @@
             let element1 = document.getElementById('additional-booking');
             if (element1.classList.contains('disable-option')) {
                 element1.classList.remove('disable-option');
+            }
+            let element2 = document.getElementById('date-booking');
+            if (element2.classList.contains('disable-option')) {
+                element2.classList.remove('disable-option');
             }
             package = e.value;
             switch (e.value) {
